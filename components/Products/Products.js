@@ -1,7 +1,10 @@
 class Products {
   render() {
+    const productsStore = localStorageUtil.getProducts();
     let htmlCatalog = "";
     CATALOG.forEach(({ id, name, price, img }) => {
+      let activeClass = "";
+      let activeText = "";
       htmlCatalog += `
       <li class='products-element'>
          <span class='products-element__name'>${name}</span>
